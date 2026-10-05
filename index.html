@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wahyu Widi Widayat — IT Business Analyst focused on turning business needs into structured, build-ready solutions.">
+  <title>Wahyu Widi Widayat — IT Business Analyst</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            ink: '#151515',
+            paper: '#f7f6f2',
+            soft: '#eceae3',
+            acid: '#c9ff4a'
+          },
+          boxShadow: {
+            lift: '0 20px 70px rgba(0,0,0,.09)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:#f7f6f2; color:#151515; }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(21,21,21,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(21,21,21,.05) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    .hero-title { letter-spacing: -.065em; position: relative; z-index: 1; }\n    .hero-title .relative { z-index: 1; }\n    .hero-title .relative .absolute { z-index: -1; }
+    .nav-link { position:relative; }
+    .nav-link:after {
+      content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px;
+      background:#151515; transition:width .2s ease;
+    }
+    .nav-link:hover:after { width:100%; }
+    .reveal { opacity:0; transform:translateY(18px); transition:all .7s ease; }
+    .reveal.in { opacity:1; transform:translateY(0); }
+    .card { transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .card:hover { transform:translateY(-4px); box-shadow:0 18px 50px rgba(0,0,0,.07); border-color:rgba(21,21,21,.25); }\n    .tool-card { transition:transform .2s ease, border-color .2s ease; }\n    .tool-card:hover { transform:translateY(-3px); border-color:rgba(21,21,21,.25); }
+    .chip {
+      display:inline-flex; align-items:center; border:1px solid rgba(21,21,21,.13);
+      border-radius:999px; padding:.42rem .72rem; font-size:.72rem; font-weight:600;
+      background:rgba(255,255,255,.4);
+    }
+    .dark-chip { border-color:rgba(255,255,255,.13); background:rgba(255,255,255,.05); }
+    .lang-id, .lang-en { display:none; }
+    body[data-lang="id"] .lang-id { display:inline; }
+    body[data-lang="en"] .lang-en { display:inline; }
+    .block-id, .block-en { display:none; }
+    body[data-lang="id"] .block-id { display:block; }
+    body[data-lang="en"] .block-en { display:block; }
+
+    .mobile-menu { display:none; }
+    .mobile-menu.open { display:block; }
+
+    @media (min-width: 768px) {
+      .hero-title { font-size:clamp(4.2rem, 8vw, 7.9rem); line-height:.91; }
+    }
+  </style>
+</head>
+
+<body data-lang="id">
+
+<header class="sticky top-0 z-50 border-b border-black/10 bg-paper/90 backdrop-blur">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
+    <a href="#top" class="font-extrabold tracking-tight text-[15px] md:text-[17px] whitespace-nowrap">Wahyu Widi Widayat<span class="opacity-30">.</span></a>
+
+    <nav class="hidden md:flex items-center gap-7 text-sm font-semibold">
+      <a class="nav-link" href="#impact"><span class="lang-id">Impact</span><span class="lang-en">Impact</span></a>
+      <a class="nav-link" href="#experience"><span class="lang-id">Experience</span><span class="lang-en">Experience</span></a>
+      <a class="nav-link" href="#projects"><span class="lang-id">Projects</span><span class="lang-en">Projects</span></a>
+      <a class="nav-link" href="#skills"><span class="lang-id">Skills</span><span class="lang-en">Skills</span></a>
+      <a class="nav-link" href="#contact"><span class="lang-id">Contact</span><span class="lang-en">Contact</span></a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button id="langBtn" class="hidden md:inline-flex text-xs font-extrabold border border-black/15 rounded-full px-3 py-2 hover:bg-ink hover:text-white transition">
+        ID / EN
+      </button>
+      <a href="CV_Wahyu_Widi_Widayat.pdf" download class="inline-flex items-center gap-2 bg-ink text-white rounded-full px-4 py-2.5 text-xs font-bold hover:opacity-85 transition">
+        <span class="lang-id">Download CV</span><span class="lang-en">Download CV</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <button id="menuBtn" class="md:hidden text-xl px-2" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="mobile-menu border-t border-black/10 bg-paper md:hidden">
+    <div class="px-5 py-5 grid gap-4 text-sm font-semibold">
+      <a href="#impact">Impact</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button id="mobileLangBtn" class="text-left">Switch language: ID / EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO: immediate positioning + HR CTA -->
+  <section class="grid-bg border-b border-black/10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+      <div class="grid lg:grid-cols-[1.55fr_.65fr] gap-12 items-end">
+
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.16em] mb-7">
+            <span class="w-2.5 h-2.5 rounded-full bg-ink"></span>
+            <span>Open to IT Business Analysis Opportunities</span>
+          </div>
+
+          <div class="mb-5">
+            <div class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-3.5 py-2 text-[11px] font-extrabold uppercase tracking-[.14em]">
+              <span class="w-2 h-2 rounded-full bg-ink"></span>
+              <span>Wahyu Widi Widayat</span>
+            </div>
+          </div>
+
+          <h1 class="hero-title font-display font-extrabold mt-2">
+            <span class="lang-id">Mengubah<br><span class="opacity-30">kebutuhan bisnis</span><br>jadi <span class="relative inline-block">solusi<span class="absolute -bottom-1 left-0 right-0 h-1.5 bg-acid rounded-full -z-0"></span></span>.</span>
+            <span class="lang-en">Turning<br><span class="opacity-30">business needs</span><br>into <span class="relative inline-block">solutions<span class="absolute -bottom-1 left-0 right-0 h-1.5 bg-acid rounded-full -z-0"></span></span>.</span>
+          </h1>
+
+          <p class="mt-7 max-w-3xl text-lg md:text-xl leading-relaxed text-black/68">
+            <span class="block-id">
+              Wahyu Widi Widayat — IT Business Analyst dengan pengalaman di requirement elicitation, process mapping, system documentation, dan koordinasi lintas fungsi. Fokus saya bukan sekadar membuat dokumen, tetapi memastikan kebutuhan bisnis bisa dipahami, dibangun, dan dieksekusi dengan jelas.
+            </span>
+            <span class="block-en">
+              Wahyu Widi Widayat — IT Business Analyst with experience in requirement elicitation, process mapping, system documentation, and cross-functional coordination. My focus is not just documentation, but making sure business needs are understood, buildable, and executable.
+            </span>
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#impact" class="rounded-full bg-ink text-white px-6 py-3.5 text-sm font-extrabold hover:opacity-85 transition">
+              <span class="lang-id">Lihat Impact Saya</span><span class="lang-en">See My Impact</span>
+            </a>
+            <a href="CV_Wahyu_Widi_Widayat.pdf" download class="rounded-full border border-black/15 bg-white/50 px-6 py-3.5 text-sm font-extrabold hover:bg-white transition">
+              <span class="lang-id">Download CV (PDF)</span><span class="lang-en">Download CV (PDF)</span>
+            </a>
+          </div>
+
+          <div class="mt-7 flex flex-wrap gap-2 text-xs font-semibold text-black/55">
+            <span class="chip">Business Analysis</span>
+            <span class="chip">System Analysis</span>
+            <span class="chip">Process Improvement</span>
+            <span class="chip">Digital Transformation</span>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="bg-ink text-white rounded-[2rem] p-7 md:p-8 shadow-lift">
+            <div class="flex justify-between text-[11px] uppercase tracking-[.17em] text-white/45">
+              <span>HR Snapshot</span><span>01</span>
+            </div>
+
+            <div class="mt-10 grid gap-6">
+              <div>
+                <div class="text-white/40 text-[11px] uppercase tracking-[.15em]">Core role</div>
+                <div class="mt-1 text-2xl font-extrabold">IT Business Analyst</div>
+              </div>
+
+              <div>
+                <div class="text-white/40 text-[11px] uppercase tracking-[.15em]">Best at</div>
+                <div class="mt-1 text-lg font-bold leading-snug">Bridging business requirements and technical execution.</div>
+              </div>
+
+              <div>
+                <div class="text-white/40 text-[11px] uppercase tracking-[.15em]">Experience</div>
+                <div class="mt-1 text-lg font-bold">BA · System Analysis · Data · E-Commerce</div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/10">
+              <a href="#contact" class="text-sm font-bold hover:text-white/70 transition">
+                <span class="lang-id">→ Let's talk</span><span class="lang-en">→ Let's talk</span>
+              </a>
+            </div>
+          </div>
+          <p class="mt-3 text-xs text-black/40">Replace the “HR Snapshot” card image/visual with a professional photo later.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT: what HR should remember -->
+  <section id="impact" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24">
+    <div class="grid lg:grid-cols-[.6fr_1.4fr] gap-12">
+      <div class="reveal">
+        <div class="text-xs uppercase tracking-[.18em] font-extrabold opacity-40">02 · Impact</div>
+        <h2 class="mt-3 text-3xl md:text-5xl font-display font-extrabold leading-tight">
+          <span class="lang-id">Yang perlu HR ingat tentang saya.</span>
+          <span class="lang-en">What HR should remember about me.</span>
+        </h2>
+        <p class="mt-5 text-black/58 leading-relaxed">
+          <span class="lang-id">Empat bukti yang paling menggambarkan cara saya bekerja: scale, collaboration, measurable results, dan problem solving.</span>
+          <span class="lang-en">Four proof points that best represent how I work: scale, collaboration, measurable results, and problem solving.</span>
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <article class="card reveal border border-black/10 bg-white/50 rounded-3xl p-7">
+          <div class="text-4xl md:text-5xl font-display font-extrabold">60%</div>
+          <h3 class="mt-4 text-lg font-extrabold">
+            <span class="lang-id">Sistem logistik</span><span class="lang-en">Logistics system</span>
+          </h3>
+          <p class="mt-2 text-sm text-black/58 leading-relaxed">
+            <span class="lang-id">Mendukung pengembangan sekitar 60% sistem logistik muatmuat melalui analysis, elicitation, dan dokumentasi kebutuhan.</span>
+            <span class="lang-en">Supported approximately 60% of the muatmuat logistics system through analysis, elicitation, and requirements documentation.</span>
+          </p>
+        </article>
+
+        <article class="card reveal border border-black/10 bg-white/50 rounded-3xl p-7">
+          <div class="text-4xl md:text-5xl font-display font-extrabold">4 + 5</div>
+          <h3 class="mt-4 text-lg font-extrabold">
+            <span class="lang-id">Lintas fungsi</span><span class="lang-en">Cross-functional</span>
+          </h3>
+          <p class="mt-2 text-sm text-black/58 leading-relaxed">
+            <span class="lang-id">Bekerja bersama 4 Senior IT BA dan berkoordinasi dengan 5 development team leads.</span>
+            <span class="lang-en">Worked with 4 Senior IT BAs and coordinated with 5 development team leads.</span>
+          </p>
+        </article>
+
+        <article class="card reveal border border-black/10 bg-white/50 rounded-3xl p-7">
+          <div class="text-4xl md:text-5xl font-display font-extrabold">18–20×</div>
+          <h3 class="mt-4 text-lg font-extrabold">
+            <span class="lang-id">Performance marketing</span><span class="lang-en">Performance marketing</span>
+          </h3>
+          <p class="mt-2 text-sm text-black/58 leading-relaxed">
+            <span class="lang-id">Konsisten mencapai ROAS 18–20 saat mengelola operasional advertising e-commerce.</span>
+            <span class="lang-en">Consistently achieved ROAS of 18–20 while managing e-commerce advertising operations.</span>
+          </p>
+        </article>
+
+        <article class="card reveal border border-black/10 bg-white/50 rounded-3xl p-7">
+          <div class="text-4xl md:text-5xl font-display font-extrabold">54</div>
+          <h3 class="mt-4 text-lg font-extrabold">
+            <span class="lang-id">Network operations</span><span class="lang-en">Network operations</span>
+          </h3>
+          <p class="mt-2 text-sm text-black/58 leading-relaxed">
+            <span class="lang-id">Menganalisis performa delivery untuk 54 Transit Hubs dan Franchise Branches.</span>
+            <span class="lang-en">Analyzed delivery performance across 54 Transit Hubs and Franchise Branches.</span>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPOSITION -->
+  <section class="bg-ink text-white border-y border-black">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24">
+      <div class="reveal max-w-3xl">
+        <div class="text-xs uppercase tracking-[.18em] font-extrabold text-white/35">03 · Why this profile</div>
+        <h2 class="mt-3 text-3xl md:text-5xl font-display font-extrabold leading-tight">
+          <span class="lang-id">Bukan cuma “bisa BA”.<br>Saya paham sisi operasi juga.</span>
+          <span class="lang-en">Not just “a BA”.<br>I understand operations too.</span>
+        </h2>
+        <p class="mt-5 text-lg text-white/62 leading-relaxed">
+          <span class="block-id">Pengalaman saya bergerak dari system analysis → IT business analysis → data operations → e-commerce. Kombinasi ini membantu saya melihat masalah dari proses, user, data, sampai implementasi.</span>
+          <span class="block-en">My experience spans system analysis → IT business analysis → data operations → e-commerce. That combination helps me see problems from process, user, data, and implementation perspectives.</span>
+        </p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-4">
+        <article class="reveal rounded-3xl border border-white/10 bg-white/5 p-7">
+          <div class="text-acid text-sm font-extrabold">01</div>
+          <h3 class="mt-5 text-xl font-extrabold">Discover</h3>
+          <p class="mt-3 text-white/55 leading-relaxed">
+            <span class="lang-id">Menggali kebutuhan, memahami stakeholder, dan menemukan bottleneck proses.</span>
+            <span class="lang-en">Elicit needs, understand stakeholders, and identify process bottlenecks.</span>
+          </p>
+        </article>
+
+        <article class="reveal rounded-3xl border border-white/10 bg-white/5 p-7">
+          <div class="text-acid text-sm font-extrabold">02</div>
+          <h3 class="mt-5 text-xl font-extrabold">Structure</h3>
+          <p class="mt-3 text-white/55 leading-relaxed">
+            <span class="lang-id">Mengubah kebutuhan menjadi flow, BRD, FRD, User Story, dan system documentation.</span>
+            <span class="lang-en">Turn needs into flows, BRDs, FRDs, User Stories, and system documentation.</span>
+          </p>
+        </article>
+
+        <article class="reveal rounded-3xl border border-white/10 bg-white/5 p-7">
+          <div class="text-acid text-sm font-extrabold">03</div>
+          <h3 class="mt-5 text-xl font-extrabold">Align</h3>
+          <p class="mt-3 text-white/55 leading-relaxed">
+            <span class="lang-id">Menjembatani business stakeholder dan development team sampai kebutuhan siap dieksekusi.</span>
+            <span class="lang-en">Bridge business stakeholders and development teams until requirements are ready to execute.</span>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE: curated, not full CV -->
+  <section id="experience" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24">
+    <div class="grid lg:grid-cols-[.52fr_1.48fr] gap-12">
+      <div class="reveal">
+        <div class="text-xs uppercase tracking-[.18em] font-extrabold opacity-40">04 · Experience</div>
+        <h2 class="mt-3 text-3xl md:text-5xl font-display font-extrabold">Career track.</h2>
+        <p class="mt-5 text-black/58 leading-relaxed">
+          <span class="lang-id">Saya sengaja menampilkan highlight yang paling relevan untuk recruiter, bukan menyalin seluruh bullet CV.</span>
+          <span class="lang-en">I’m showing the recruiter-relevant highlights instead of copying every CV bullet.</span>
+        </p>
+      </div>
+
+      <div class="space-y-10">
+        <article class="reveal border-t border-black/15 pt-6">
+          <div class="flex flex-col md:flex-row md:justify-between gap-3">
+            <div>
+              <div class="text-xs uppercase tracking-[.14em] font-extrabold opacity-40">Current</div>
+              <h3 class="mt-2 text-2xl font-extrabold">IT Support & E-Commerce Coordinator</h3>
+              <p class="mt-1 text-black/50">UD. Dua Lebah Madu · Gresik</p>
+            </div>
+            <div class="text-sm text-black/45">Aug 2025 — Present</div>
+          </div>
+          <div class="mt-6 grid md:grid-cols-2 gap-3">
+            <div class="rounded-2xl bg-soft p-5"><strong>6 stores</strong><p class="mt-1 text-sm text-black/55">Shopee + TikTok Shop managed end-to-end.</p></div>
+            <div class="rounded-2xl bg-soft p-5"><strong>18–20× ROAS</strong><p class="mt-1 text-sm text-black/55">Data-driven ad optimization.</p></div>
+            <div class="rounded-2xl bg-soft p-5"><strong>3–8% growth</strong><p class="mt-1 text-sm text-black/55">Monthly sales growth.</p></div>
+            <div class="rounded-2xl bg-soft p-5"><strong>Ops + marketing</strong><p class="mt-1 text-sm text-black/55">Stock, fulfillment, campaigns, affiliates.</p></div>
+          </div>
+        </article>
+
+        <article class="reveal border-t border-black/15 pt-6">
+          <div class="flex flex-col md:flex-row md:justify-between gap-3">
+            <div>
+              <div class="text-xs uppercase tracking-[.14em] font-extrabold opacity-40">Core BA experience</div>
+              <h3 class="mt-2 text-2xl font-extrabold">Assistant IT Business Analyst</h3>
+              <p class="mt-1 text-black/50">PT. AZlogistik Dot Com · Surabaya</p>
+            </div>
+            <div class="text-sm text-black/45">Sep 2022 — Jul 2025</div>
+          </div>
+
+          <p class="mt-5 max-w-3xl text-black/62 leading-relaxed">
+            <span class="block-id">Area utama: requirement elicitation, business process mapping, BRD/FRD/User Story, stakeholder coordination, dan SDLC support untuk sistem logistik muatmuat.</span>
+            <span class="block-en">Core scope: requirement elicitation, business process mapping, BRD/FRD/User Stories, stakeholder coordination, and SDLC support for the muatmuat logistics system.</span>
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">60% system supported</span>
+            <span class="chip">4 Senior IT BAs</span>
+            <span class="chip">5 Dev Leads</span>
+            <span class="chip">BRD / FRD</span>
+            <span class="chip">Process Mapping</span>
+          </div>
+        </article>
+
+        <article class="reveal border-t border-black/15 pt-6">
+          <div class="flex flex-col md:flex-row md:justify-between gap-3">
+            <div>
+              <h3 class="text-xl font-extrabold">Data Analyst Intern</h3>
+              <p class="mt-1 text-black/50">PT. IDexpress Logistik Indonesia · Surakarta</p>
+            </div>
+            <div class="text-sm text-black/45">Feb 2022 — Aug 2022</div>
+          </div>
+          <p class="mt-4 max-w-3xl text-black/62 leading-relaxed">
+            <span class="block-id">Menganalisis delivery performance untuk 54 Transit Hubs dan Franchise Branches serta menghasilkan laporan operasional harian, mingguan, bulanan, dan tahunan menggunakan Excel.</span>
+            <span class="block-en">Analyzed delivery performance across 54 Transit Hubs and Franchise Branches and produced daily, weekly, monthly, and annual operational reports using Excel.</span>
+          </p>
+        </article>
+
+        <article class="reveal border-t border-black/15 pt-6">
+          <div class="flex flex-col md:flex-row md:justify-between gap-3">
+            <div>
+              <h3 class="text-xl font-extrabold">Systems Analyst Intern</h3>
+              <p class="mt-1 text-black/50">PT. Alfath Teknologi Kreatif · Malang</p>
+            </div>
+            <div class="text-sm text-black/45">Sep 2020 — Oct 2020</div>
+          </div>
+          <p class="mt-4 max-w-3xl text-black/62 leading-relaxed">
+            <span class="block-id">Requirement analysis untuk e-recruitment berbasis Camunda BPMN, termasuk process flow, workflow diagram, system specification, dan stakeholder alignment.</span>
+            <span class="block-en">Requirement analysis for a Camunda BPMN-based e-recruitment system, including process flows, workflow diagrams, system specifications, and stakeholder alignment.</span>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="projects" class="bg-soft border-y border-black/10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24">
+      <div class="reveal max-w-3xl">
+        <div class="text-xs uppercase tracking-[.18em] font-extrabold opacity-40">05 · Selected work</div>
+        <h2 class="mt-3 text-3xl md:text-5xl font-display font-extrabold">
+          <span class="lang-id">Work yang menunjukkan cara saya berpikir.</span>
+          <span class="lang-en">Work that shows how I think.</span>
+        </h2>
+        <p class="mt-5 text-black/58 leading-relaxed">
+          <span class="lang-id">Bukan galeri proyek. Ini adalah bukti area analisis dan problem-solving yang pernah saya kerjakan.</span>
+          <span class="lang-en">Not a project gallery. These are proof points of the analysis and problem-solving areas I’ve worked on.</span>
+        </p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 gap-5">
+        <article class="card reveal bg-paper border border-black/10 rounded-3xl p-7">
+          <div class="flex justify-between text-xs uppercase tracking-[.16em] opacity-40"><span>System Analysis</span><span>01</span></div>
+          <h3 class="mt-7 text-2xl font-extrabold">Court Information System</h3>
+          <p class="mt-2 text-sm text-black/48">Kediri City District Court · 2018</p>
+          <p class="mt-5 text-black/62 leading-relaxed">System Analyst project listed in the CV.</p>
+        </article>
+
+        <article class="card reveal bg-paper border border-black/10 rounded-3xl p-7">
+          <div class="flex justify-between text-xs uppercase tracking-[.16em] opacity-40"><span>System Analysis</span><span>02</span></div>
+          <h3 class="mt-7 text-2xl font-extrabold">Apartment / Rusun Information System</h3>
+          <p class="mt-2 text-sm text-black/48">Kediri City · 2018</p>
+          <p class="mt-5 text-black/62 leading-relaxed">System Analyst project listed in the CV, focused on process and system needs.</p>
+        </article>
+
+        <article class="card reveal bg-paper border border-black/10 rounded-3xl p-7">
+          <div class="flex justify-between text-xs uppercase tracking-[.16em] opacity-40"><span>BPM / Requirements</span><span>03</span></div>
+          <h3 class="mt-7 text-2xl font-extrabold">E-Recruitment System</h3>
+          <p class="mt-2 text-sm text-black/48">State-owned bank vendor · 2020</p>
+          <p class="mt-5 text-black/62 leading-relaxed">Camunda BPMN-based system with requirement analysis, workflow modelling, and system specification.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Camunda BPM</span><span class="chip">BPMN</span><span class="chip">Elicitation</span></div>
+        </article>
+
+        <article class="card reveal bg-paper border border-black/10 rounded-3xl p-7">
+          <div class="flex justify-between text-xs uppercase tracking-[.16em] opacity-40"><span>Intellectual Property</span><span>04</span></div>
+          <h3 class="mt-7 text-2xl font-extrabold">PTEST — Psychology Test Application</h3>
+          <p class="mt-2 text-sm text-black/48">HAKI · 2020</p>
+          <p class="mt-5 text-black/62 leading-relaxed">Application listed in the CV with an Intellectual Property Certificate.</p>
+        </article>
+
+        <article class="card reveal md:col-span-2 bg-ink text-white rounded-3xl p-8 md:p-10">
+          <div class="flex justify-between text-xs uppercase tracking-[.16em] text-white/35"><span>Publication</span><span>05</span></div>
+          <h3 class="mt-7 text-2xl md:text-3xl font-extrabold">Recommendations for Choosing a Place to Stay in Greater Malang</h3>
+          <p class="mt-2 text-white/45">SAW & TOPSIS · IEEE · 2021</p>
+          <p class="mt-5 max-w-3xl text-white/62 leading-relaxed">Publication listed in the CV using SAW and TOPSIS for accommodation recommendations in Greater Malang.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS: keyword-rich but human-readable -->
+  <section id="skills" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24">
+    <div class="grid lg:grid-cols-[.52fr_1.48fr] gap-12">
+      <div class="reveal">
+        <div class="text-xs uppercase tracking-[.18em] font-extrabold opacity-40">06 · Capability</div>
+        <h2 class="mt-3 text-3xl md:text-5xl font-display font-extrabold">Core toolkit.</h2>
+        <p class="mt-5 text-black/58 leading-relaxed">Keywords recruiters care about, presented around the work rather than as a skill dump.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <article class="reveal border border-black/10 rounded-[1.6rem] p-7 bg-white/45">
+          <div class="flex items-center justify-between">
+            <div class="text-xs font-extrabold uppercase tracking-[.15em] opacity-40">Business Analysis</div>
+            <div class="text-xs font-extrabold opacity-25">01</div>
+          </div>
+          <h3 class="mt-4 text-xl font-extrabold">Requirements → clarity</h3>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">Requirement Gathering</span><span class="chip">Requirement Elicitation</span><span class="chip">BRD</span><span class="chip">FRD</span><span class="chip">User Story</span><span class="chip">Stakeholder Management</span>
+          </div>
+        </article>
+
+        <article class="reveal border border-black/10 rounded-[1.6rem] p-7 bg-white/45">
+          <div class="flex items-center justify-between">
+            <div class="text-xs font-extrabold uppercase tracking-[.15em] opacity-40">System & Process</div>
+            <div class="text-xs font-extrabold opacity-25">02</div>
+          </div>
+          <h3 class="mt-4 text-xl font-extrabold">Process → structure</h3>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">Business Process Mapping</span><span class="chip">BPMN</span><span class="chip">Workflow</span><span class="chip">Flowchart</span><span class="chip">System Documentation</span><span class="chip">SDLC</span>
+          </div>
+        </article>
+
+        <article class="reveal border border-black/10 rounded-[1.6rem] p-7 bg-white/45">
+          <div class="flex items-center justify-between">
+            <div class="text-xs font-extrabold uppercase tracking-[.15em] opacity-40">Data & Operations</div>
+            <div class="text-xs font-extrabold opacity-25">03</div>
+          </div>
+          <h3 class="mt-4 text-xl font-extrabold">Data → decisions</h3>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">Data Analysis</span><span class="chip">Operational Reporting</span><span class="chip">Performance Analysis</span><span class="chip">Process Improvement</span>
+          </div>
+        </article>
+
+        <article class="reveal border border-black/10 rounded-[1.6rem] p-7 bg-white/45">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="text-xs font-extrabold uppercase tracking-[.15em] opacity-40">Soft Skills</div>
+            </div>
+            <div class="text-xs font-extrabold opacity-25">04</div>
+          </div>
+          <h3 class="mt-4 text-xl font-extrabold">People → alignment</h3>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">Cross-functional Collaboration</span><span class="chip">Problem Solving</span><span class="chip">Analytical Thinking</span><span class="chip">Communication</span><span class="chip">Presentation</span>
+          </div>
+        </article>
+
+        <article class="reveal md:col-span-2 rounded-[1.6rem] border border-black/10 bg-white p-7 md:p-8 shadow-[0_12px_40px_rgba(0,0,0,.04)]">
+          <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
+            <div>
+              <div class="text-xs font-extrabold uppercase tracking-[.15em] opacity-40">Tools & Platforms</div>
+              <h3 class="mt-3 text-xl md:text-2xl font-extrabold">The stack behind the work.</h3>
+              <p class="mt-2 text-sm text-black/55 max-w-2xl">
+                <span class="block-id">Tools yang saya gunakan untuk dokumentasi, kolaborasi, process modelling, analisis data, dan project coordination.</span>
+                <span class="block-en">Tools I use for documentation, collaboration, process modelling, data analysis, and project coordination.</span>
+              </p>
+            </div>
+            <div class="shrink-0 inline-flex items-center rounded-full bg-ink text-white px-3.5 py-2 text-[11px] font-extrabold uppercase tracking-[.12em]">7 core tools</div>
+          </div>
+
+          <div class="mt-7 grid grid-cols-2 lg:grid-cols-4 gap-3">
+            <div class="tool-card rounded-2xl border border-black/10 bg-paper p-5">
+              <div class="text-[10px] font-extrabold uppercase tracking-[.14em] opacity-40">01 · Analysis</div>
+              <div class="mt-3 text-base font-extrabold">Microsoft Excel</div>
+              <div class="mt-2 text-xs leading-relaxed text-black/50">Data analysis & operational reporting</div>
+            </div>
+
+            <div class="tool-card rounded-2xl border border-black/10 bg-paper p-5">
+              <div class="text-[10px] font-extrabold uppercase tracking-[.14em] opacity-40">02 · Collaboration</div>
+              <div class="mt-3 text-base font-extrabold">Google Sheets</div>
+              <div class="mt-2 text-xs leading-relaxed text-black/50">Shared analysis & collaborative tracking</div>
+            </div>
+
+            <div class="tool-card rounded-2xl border border-black/10 bg-paper p-5">
+              <div class="text-[10px] font-extrabold uppercase tracking-[.14em] opacity-40">03 · Delivery</div>
+              <div class="mt-3 text-base font-extrabold">Trello</div>
+              <div class="mt-2 text-xs leading-relaxed text-black/50">Task & project coordination</div>
+            </div>
+
+            <div class="tool-card rounded-2xl border border-black/10 bg-paper p-5">
+              <div class="text-[10px] font-extrabold uppercase tracking-[.14em] opacity-40">04 · Product</div>
+              <div class="mt-3 text-base font-extrabold">Figma</div>
+              <div class="mt-2 text-xs leading-relaxed text-black/50">UI reference & solution communication</div>
+            </div>
+
+            <div class="tool-card rounded-2xl border border-black/10 bg-paper p-5">
+              <div class="text-[10px] font-extrabold uppercase tracking-[.14em] opacity-40">05 · Modelling</div>
+              <div class="mt-3 text-base font-extrabold">Draw.io</div>
+              <div class="mt-2 text-xs leading-relaxed text-black/50">Flowcharts & process visualization</div>
+            </div>
+
+            <div class="tool-card rounded-2xl border border-black/10 bg-paper p-5">
+              <div class="text-[10px] font-extrabold uppercase tracking-[.14em] opacity-40">06 · BPM</div>
+              <div class="mt-3 text-base font-extrabold">Camunda BPM</div>
+              <div class="mt-2 text-xs leading-relaxed text-black/50">BPMN workflows & e-recruitment analysis</div>
+            </div>
+
+            <div class="tool-card rounded-2xl border border-black/10 bg-paper p-5">
+              <div class="text-[10px] font-extrabold uppercase tracking-[.14em] opacity-40">07 · Productivity</div>
+              <div class="mt-3 text-base font-extrabold">Microsoft Office</div>
+              <div class="mt-2 text-xs leading-relaxed text-black/50">Documentation, presentations & reporting</div>
+            </div>
+
+            <div class="rounded-2xl border border-dashed border-black/15 bg-black/[.025] p-5 flex items-center">
+              <div>
+                <div class="text-[10px] font-extrabold uppercase tracking-[.14em] opacity-40">Workflow</div>
+                <div class="mt-2 text-sm font-extrabold leading-snug">Discover → model → document → align → deliver</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="bg-soft border-y border-black/10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24">
+      <div class="grid lg:grid-cols-[.75fr_1.25fr] gap-12 items-start">
+        <div class="reveal">
+          <div class="text-xs uppercase tracking-[.18em] font-extrabold opacity-40">07 · Leadership</div>
+          <h2 class="mt-3 text-3xl md:text-5xl font-display font-extrabold">Leadership beyond the job title.</h2>
+          <p class="mt-5 text-black/58 leading-relaxed">Pengalaman organisasi memperkuat kemampuan koordinasi, komunikasi, dan stakeholder management saya.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <article class="reveal bg-paper rounded-3xl border border-black/10 p-6">
+            <div class="text-sm text-black/40">2020 — 2021</div>
+            <h3 class="mt-3 font-extrabold text-lg">Vice President · IMSII</h3>
+            <p class="mt-3 text-sm text-black/56 leading-relaxed">Co-led national organization and coordinated 9 regional chapters.</p>
+          </article>
+
+          <article class="reveal bg-paper rounded-3xl border border-black/10 p-6">
+            <div class="text-sm text-black/40">2018 — 2020</div>
+            <h3 class="mt-3 font-extrabold text-lg">Regional Coordinator Chair</h3>
+            <p class="mt-3 text-sm text-black/56 leading-relaxed">Led 16 Information Systems student associations across East Java & Bali.</p>
+          </article>
+
+          <article class="reveal bg-paper rounded-3xl border border-black/10 p-6">
+            <div class="text-sm text-black/40">2019 — 2020</div>
+            <h3 class="mt-3 font-extrabold text-lg">BEM-U · Communication</h3>
+            <p class="mt-3 text-sm text-black/56 leading-relaxed">Managed communication coordination across 20 student associations, 5 faculties, 14 units, and 3 student bodies.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT: conversion-oriented -->
+  <section id="contact" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="reveal rounded-[2rem] bg-white border border-black/10 shadow-lift p-7 md:p-10">
+      <div class="grid lg:grid-cols-[1.25fr_.75fr] gap-12">
+        <div>
+          <div class="text-xs uppercase tracking-[.18em] font-extrabold opacity-40">08 · Contact</div>
+          <h2 class="mt-3 text-3xl md:text-6xl font-display font-extrabold leading-tight">
+            <span class="lang-id">Butuh BA yang bisa bicara bisnis dan teknis?</span>
+            <span class="lang-en">Need a BA who can speak business and tech?</span>
+          </h2>
+          <p class="mt-5 max-w-2xl text-lg text-black/58 leading-relaxed">
+            <span class="block-id">Saya terbuka untuk peluang IT Business Analyst, System Analyst, Digital Transformation, dan Process Improvement.</span>
+            <span class="block-en">I’m open to opportunities in IT Business Analysis, System Analysis, Digital Transformation, and Process Improvement.</span>
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:widayat1697@gmail.com" class="inline-flex rounded-full bg-ink text-white px-6 py-3.5 font-extrabold text-sm hover:opacity-85 transition">Email Me</a>
+            <a href="CV_Wahyu_Widi_Widayat.pdf" download class="inline-flex rounded-full border border-black/15 px-6 py-3.5 font-extrabold text-sm hover:bg-paper transition">
+              <span class="lang-id">Download CV</span><span class="lang-en">Download CV</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-5">
+          <div>
+            <div class="text-xs uppercase tracking-[.15em] text-black/40">Email</div>
+            <div class="mt-1 font-bold">widayat1697@gmail.com</div>
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-[.15em] text-black/40">LinkedIn</div>
+            <a href="https://linkedin.com/in/widayatid" target="_blank" class="mt-1 inline-block font-bold hover:opacity-55 transition">linkedin.com/in/widayatid</a>
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-[.15em] text-black/40">Location</div>
+            <div class="mt-1 font-bold">Gresik, Indonesia</div>
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-[.15em] text-black/40">Education</div>
+            <div class="mt-1 font-bold">S1 Information Systems · GPA 3.75 / 4.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="border-t border-black/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-7 flex flex-col md:flex-row justify-between gap-3 text-sm text-black/40">
+    <span>© <span id="year"></span> Wahyu Widi Widayat</span>
+    <span>Wahyu Widi Widayat · IT Business Analyst · Gresik, Indonesia</span>
+  </div>
+</footer>
+
+<script>
+  const body = document.body;
+  const langBtn = document.getElementById('langBtn');
+  const mobileLangBtn = document.getElementById('mobileLangBtn');
+
+  function toggleLanguage() {
+    body.dataset.lang = body.dataset.lang === 'id' ? 'en' : 'id';
+  }
+
+  langBtn.addEventListener('click', toggleLanguage);
+  mobileLangBtn.addEventListener('click', toggleLanguage);
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in');
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
